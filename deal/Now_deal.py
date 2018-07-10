@@ -91,6 +91,7 @@ for row1 in range (2,Pre_Row_Num + 1):
     if table.cell(row=row1, column=10).value is None:
         table.cell(row=row1, column=10).value=0
 '''
+
 table.cell(row=row1, column=4).value = float(table.cell(row=row1, column=4).value)
 table.cell(row=row1, column=5).value = float(table.cell(row=row1, column=5).value)
 table.cell(row=row1, column=8).value = float(table.cell(row=row1, column=8).value)
