@@ -5,6 +5,7 @@ import win32com.client as win32
 
 excel = win32com.client.Dispatch('Excel.Application')
 excel.Visible = -1
+#此处的change文件放在deal路径中报错，因此复制到另外的目录下。地址需为绝对地址
 wb = excel.Workbooks.Open('C:\change.xlsx')
 ws = wb.Worksheets[0]
 
