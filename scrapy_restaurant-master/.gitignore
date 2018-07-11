@@ -1,0 +1,19 @@
+# 忽略掉所有文件名是/venc的文件
+/venc
+
+# 忽略pyc
+*.pyc
+
+# 忽略所有生成的html文件
+*.html
+
+# 忽略所有.o 和 .a文件
+*.[oa]
+=======
+*.pyc
+
+/venc
+
+*.json
+
+*.log
