@@ -51,7 +51,7 @@ class DianpingSpider(scrapy.Spider):
 
         for sel in response.css("p.recommend-name > a"):
             
-            print "chenyixiao" 
+            print ("chenyixiao")
             food = Food()
             food['food_name'] = sel.xpath('@title').extract()[0]
             food['food_recommend_num'] = sel.css('em::text').re("[^()]+")[0]
