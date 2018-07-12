@@ -59,8 +59,19 @@ for i in range (2 ,Pre_Row_Num + 1 ):
 					table.cell(row= i, column= 7).value = Next_sheet.cell(row=j+k, column=2).value
 					table.cell(row=i, column=8).value = Next_sheet.cell(row=j+k, column=3).value
 					table.cell(row=i, column=9).value = Next_sheet.cell(row=j+k, column=4).value
-					table.cell(row=i, column=10).value = Next_sheet.cell(row=j+k, column=5).value
-			break
+					table.cell(row=i, column=10).value = Next_sheet.cell(row=j+k, column=5).value      				                break
+                                  else if(k=51)
+					table.cell(row= i, column= 1).value = Pre_sheet.cell(row=i, column=1).value
+					table.cell(row= i, column= 2).value = Pre_sheet.cell(row=i, column=2).value
+					table.cell(row= i, column= 3).value = Pre_sheet.cell(row=i, column=3).value
+					table.cell(row= i, column= 4).value = 0
+					table.cell(row= i, column= 5).value = 0
+					table.cell(row= i, column= 6).value = Next_sheet.cell(row=j+k, column=1).value
+					table.cell(row= i, column= 7).value = Next_sheet.cell(row=j+k, column=2).value
+					table.cell(row= i, column=8).value = Next_sheet.cell(row=j+k, column=3).value
+					table.cell(row= i, column=9).value = 0
+					table.cell(row= i, column=10).value = 0  
+                                        
 
 
 
