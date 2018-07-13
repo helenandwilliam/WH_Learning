@@ -29,4 +29,4 @@ class DianpingSpider(scrapy.Spider):
 #            
 #            yield user
 
-        print response.body()
+        print (response.body())

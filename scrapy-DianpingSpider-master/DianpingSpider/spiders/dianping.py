@@ -58,7 +58,7 @@ class DianpingSpider(scrapy.Spider):
                 foods = food_json['msg']['shopInfo']['dishTags'][:-1].split('|')
             except (TypeError, ValueError) as err:
                 foods = []
-                print "Mark: ", err
+                print ("Mark: ", err)
 
             for f in foods: 
                 
@@ -69,7 +69,7 @@ class DianpingSpider(scrapy.Spider):
                     num = int(f.split(',')[1])
                 except (UnicodeEncodeError, IndexError) as err:
                     num = 0
-                    print "Mark:", err
+                    print ("Mark:", err)
 
                 food['foodRecommendNum'] = num 
 
