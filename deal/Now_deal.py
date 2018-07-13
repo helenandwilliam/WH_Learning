@@ -40,76 +40,65 @@ table.cell(row= 1, column= 11).value = '营业额差值'
 Same_column = 0
 
 for i in range (2 ,Pre_Row_Num + 1 ):
-	for j in range (2 , Next_Row_Num + 1):
-		if Pre_sheet.cell(row=i, column=1).value == Next_sheet.cell(row=j, column=1).value and\
+    for j in range (2 , Next_Row_Num + 1):
+        if Pre_sheet.cell(row=i, column=1).value == Next_sheet.cell(row=j, column=1).value and\
 		   Pre_sheet.cell(row=i, column=2).value == Next_sheet.cell(row=j, column=2).value:
 
-			Same_column = j
+            Same_column = j
 
-			for k in range (0,51):
-				if Pre_sheet.cell(row=i, column=3).value == Next_sheet.cell(row=j+k, column=3).value and \
+            for k in range (0,51):
+                if Pre_sheet.cell(row=i, column=3).value == Next_sheet.cell(row=j+k, column=3).value and \
 						Pre_sheet.cell(row=i, column=5).value == Next_sheet.cell(row=j+k, column=5).value:
 
-					table.cell(row= i, column= 1).value = Pre_sheet.cell(row=i, column=1).value
-					table.cell(row= i, column= 2).value = Pre_sheet.cell(row=i, column=2).value
-					table.cell(row= i, column= 3).value = Pre_sheet.cell(row=i, column=3).value
-					table.cell(row= i, column= 4).value = Pre_sheet.cell(row=i, column=4).value
-					table.cell(row= i, column= 5).value = Pre_sheet.cell(row=i, column=5).value
-					table.cell(row= i, column= 6).value = Next_sheet.cell(row=j+k, column=1).value
-					table.cell(row= i, column= 7).value = Next_sheet.cell(row=j+k, column=2).value
-					table.cell(row=i, column=8).value = Next_sheet.cell(row=j+k, column=3).value
-					table.cell(row=i, column=9).value = Next_sheet.cell(row=j+k, column=4).value
-					table.cell(row=i, column=10).value = Next_sheet.cell(row=j+k, column=5).value      				                break
-                                  else if(k=51)
-					table.cell(row= i, column= 1).value = Pre_sheet.cell(row=i, column=1).value
-					table.cell(row= i, column= 2).value = Pre_sheet.cell(row=i, column=2).value
-					table.cell(row= i, column= 3).value = Pre_sheet.cell(row=i, column=3).value
-					table.cell(row= i, column= 4).value = 0
-					table.cell(row= i, column= 5).value = 0
-					table.cell(row= i, column= 6).value = Next_sheet.cell(row=j+k, column=1).value
-					table.cell(row= i, column= 7).value = Next_sheet.cell(row=j+k, column=2).value
-					table.cell(row= i, column=8).value = Next_sheet.cell(row=j+k, column=3).value
-					table.cell(row= i, column=9).value = 0
-					table.cell(row= i, column=10).value = 0  
+                    table.cell(row= i, column= 1).value = Pre_sheet.cell(row=i, column=1).value
+                    table.cell(row= i, column= 2).value = Pre_sheet.cell(row=i, column=2).value
+                    table.cell(row= i, column= 3).value = Pre_sheet.cell(row=i, column=3).value
+                    table.cell(row= i, column= 4).value = Pre_sheet.cell(row=i, column=4).value
+                    table.cell(row= i, column= 5).value = Pre_sheet.cell(row=i, column=5).value
+                    table.cell(row= i, column= 6).value = Next_sheet.cell(row=j+k, column=1).value
+                    table.cell(row= i, column= 7).value = Next_sheet.cell(row=j+k, column=2).value
+                    table.cell(row=i, column=8).value = Next_sheet.cell(row=j+k, column=3).value
+                    table.cell(row=i, column=9).value = Next_sheet.cell(row=j+k, column=4).value
+                    table.cell(row=i, column=10).value = Next_sheet.cell(row=j+k, column=5).value
+                    if table.cell(row= i, column= 5).value is None:
+                        table.cell(row=i, column=4).value = 0
+                        table.cell(row=i, column=5).value = 0
+                        table.cell(row=i, column=9).value = 0
+                        table.cell(row=i, column=10).value = 0
+                    break
+            if table.cell(row= i, column= 1).value is None:
+                table.cell(row= i, column= 1).value = Pre_sheet.cell(row=i, column=1).value
+                table.cell(row= i, column= 2).value = Pre_sheet.cell(row=i, column=2).value
+                table.cell(row= i, column= 3).value = Pre_sheet.cell(row=i, column=3).value
+                table.cell(row= i, column= 4).value = 0
+                table.cell(row= i, column= 5).value = 0
+                table.cell(row= i, column= 6).value = Next_sheet.cell(row=j, column=1).value
+                table.cell(row= i, column= 7).value = Next_sheet.cell(row=j, column=2).value
+                table.cell(row= i, column=8).value = Next_sheet.cell(row=j, column=3).value
+                table.cell(row= i, column=9).value = 0
+                table.cell(row= i, column=10).value = 0
+    if table.cell(row= i, column= 1).value is None:
+        table.cell(row=i, column=1).value = Pre_sheet.cell(row=i, column=1).value
+        table.cell(row=i, column=2).value = Pre_sheet.cell(row=i, column=2).value
+        table.cell(row=i, column=3).value = Pre_sheet.cell(row=i, column=3).value
+        table.cell(row=i, column=4).value = 0
+        table.cell(row=i, column=5).value = 0
+        table.cell(row=i, column=6).value = Pre_sheet.cell(row=i, column=1).value
+        table.cell(row=i, column=7).value = Pre_sheet.cell(row=i, column=2).value
+        table.cell(row=i, column=8).value = Pre_sheet.cell(row=i, column=3).value
+        table.cell(row=i, column=9).value = 0
+        table.cell(row=i, column=10).value = 0
                                         
 
 
-
 for row1 in range (2,Pre_Row_Num + 1):
-	for column1 in range (1, 11):
-		if table.cell(row=row1, column=column1).value is None:
-			table.cell(row=row1, column=column1).value=0
-'''
-for row1 in range (2,Pre_Row_Num + 1):
-    if table.cell(row=row1, column=1).value is None:
-        table.cell(row=row1, column=1).value = 0
-    if table.cell(row=row1, column=2).value is None:
-        table.cell(row=row1, column=2).value = 0
-    if table.cell(row=row1, column=3).value is None:
-       table.cell(row=row1, column=3).value = 0
-    if table.cell(row=row1, column=4).value is None:
-       table.cell(row=row1, column=4).value = 0
-    if table.cell(row=row1, column=5).value is None:
-        table.cell(row=row1, column=5).value = 0
-    if table.cell(row=row1, column=6).value is None:
-        table.cell(row=row1, column=6).value = 0
-    if table.cell(row=row1, column=7).value is None:
-        table.cell(row=row1, column=7).value=0
-    if table.cell(row=row1, column=8).value is None:
-        table.cell(row=row1, column=8).value=0
-    if table.cell(row=row1, column=9).value is None:
-        table.cell(row=row1, column=9).value=0
-    if table.cell(row=row1, column=10).value is None:
-        table.cell(row=row1, column=10).value=0
-'''
+    table.cell(row=row1, column=4).value = float(table.cell(row=row1, column=4).value)
+    table.cell(row=row1, column=5).value = float(table.cell(row=row1, column=5).value)
+    table.cell(row=row1, column=9).value = float(table.cell(row=row1, column=9).value)
+    table.cell(row=row1, column=10).value = float(table.cell(row=row1, column=10).value)
 
-table.cell(row=row1, column=4).value = float(table.cell(row=row1, column=4).value)
-table.cell(row=row1, column=5).value = float(table.cell(row=row1, column=5).value)
-table.cell(row=row1, column=8).value = float(table.cell(row=row1, column=8).value)
-table.cell(row=row1, column=9).value = float(table.cell(row=row1, column=9).value)
-
-Amount = table.cell(row=row1, column=8).value - table.cell(row=row1, column=4).value
-table.cell(row=row1, column=10).value = Amount * table.cell(row=row1, column=9).value
+    Amount = table.cell(row=row1, column=9).value - table.cell(row=row1, column=4).value
+    table.cell(row=row1, column=11).value = Amount * table.cell(row=row1, column=10).value
 
 work.save('new_list.xlsx')
 				
